@@ -6,7 +6,7 @@ App to Introduce oneself
 
 ### App Walk-though
 
-<img src="gifs/preWorkOptionals.gif" width=200><br>
+<img src="gifs/preWorkMain.gif" width=200><br>
 
 ### Required Features
 
