@@ -13,6 +13,7 @@ let savedFirstName: String = "savedFirstName"
 let savedLastName: String = "savedLastName"
 let savedNumPets: String = "savedNumPets"
 let savedYear: String = "savedYear"
+let morePets: String = "morePets"
 
 let defaults = UserDefaults.standard
 
@@ -82,9 +83,11 @@ class ViewController: UIViewController {
 		
 		let numPets = checkNumPets(labelField: numberOfPets, name: "Pets") ?? ""
 		
+		let boolPets = morePetsSwitch.isOn
+		
 		// Creating a variable of type string, that holds an introduction. The introduction interpolates the values from the text fields provided.
 		// Currently we can only present the information in a print statement. However, this lets us verify that our app is printing out what is intended!
-		let introduction = "My name is \(firstName) \(lastName) and I attend \(school). I am currently in my \(year) year and I own \(numPets) cats. It is \(morePetsSwitch.isOn) that I want more pets."
+		let introduction = "My name is \(firstName) \(lastName) and I attend \(school). I am currently in my \(year) year and I own \(numPets) cats. It is \(boolPets) that I want more pets."
 		
 		
 		// Creates the alert where we pass in our message, which our introduction.
@@ -103,6 +106,7 @@ class ViewController: UIViewController {
 		defaults.set(schoolTextField.text, forKey: savedSchool)
 		defaults.set(numberOfPets.text, forKey: savedNumPets)
 		defaults.set(yearSegmentedControl.selectedSegmentIndex, forKey: savedYear)
+		defaults.set(boolPets, forKey: morePets)
 	}
 	
 	
@@ -117,6 +121,7 @@ class ViewController: UIViewController {
 		schoolTextField.text = defaults.string(forKey: savedSchool)
 		numberOfPets.text = defaults.string(forKey: savedNumPets)
 		yearSegmentedControl.selectedSegmentIndex = defaults.integer(forKey: savedYear)
+		morePetsSwitch.isOn = defaults.bool(forKey: morePets)
 		
 		
 	}
