@@ -4,7 +4,7 @@
 
 App to Introduce oneself
 
-### App Walk-though
+### App Walk-through
 
 <img src="gifs/preWorkMain.gif" width=200><br>
 
